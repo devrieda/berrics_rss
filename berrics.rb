@@ -35,7 +35,7 @@ doc.search("div#vpbot/p").each_with_index do |meta, i|
   next unless meta.inner_text.match /POSTED/
 
   # reformat date
-  pattern = /.*(\d\d:\d\d).*([\d]{1,2}\.[\d]{1,2}\.)(\d\d) .*/
+  pattern = /.*(\d\d:\d\d)\s*([\d]{1,2}\.[\d]{1,2}\.)(\d\d) .*/
   text = meta.inner_text.gsub(pattern, '\220\3 \1').gsub('.', '/')
 
   @posts[i].created_at = Time.parse(text)
