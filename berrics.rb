@@ -41,6 +41,15 @@ doc.search("div#vpbot/p").each_with_index do |meta, i|
   @posts[i].created_at = Time.parse(text)
 end
 
+# weekend posts
+if @posts.size == 0 
+  doc.search("div#vptop/h3").each do |h3| 
+    @posts << Post.new(:title      => "Weekend Post: #{h3.inner_html}", 
+                       :url        => 'http://theberrics.com/dailyops.php', 
+                       :created_at => Time.parse(Time.now.strftime("%m/%d/%Y")))
+  end
+end
+
 xml = ::Builder::XmlMarkup.new(:indent => 2)
 xml.instruct! :xml, :version => '1.0'
 xml.rss :version => "2.0" do
