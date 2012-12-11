@@ -7,7 +7,7 @@ Creates RSS Feed for theberrics.com website
 
 Checkout the repository
 
-    $ git clone git://github.com/devrieda/berrics_rss.git
+    $ git clone https://github.com/devrieda/berrics_rss.git
 
 Install Locally
   
@@ -22,3 +22,9 @@ Generate RSS
 
     builder = BerricsRss::Builder.new
     rss = builder.xml
+
+Write RSS to file
+    
+    builder = BerricsRss::Builder.new
+    builder.write("path/to/berrics.rss")
+    
