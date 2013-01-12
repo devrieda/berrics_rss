@@ -28,3 +28,7 @@ Write RSS to file
     builder = BerricsRss::Builder.new
     builder.write("path/to/berrics.rss")
     
+
+## LICENSE
+
+Released under the [MIT License](http://www.opensource.org/licenses/MIT)
